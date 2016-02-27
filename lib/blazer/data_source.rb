@@ -76,7 +76,7 @@ module Blazer
             result.each do |untyped_row|
               row = {}
               untyped_row.each do |k, v|
-                row[k] = result.column_types.empty? ? v : result.column_types[k].send(:type_cast, v)
+                row[k] = v # result.column_types.empty? ? v : result.column_types[k].send(:type_cast, v)
               end
               rows << row
             end
